@@ -1,21 +1,19 @@
-import { useState } from "react";
+import { MantineProvider, createTheme } from "@mantine/core";
+import { Notifications } from "@mantine/notifications";
+import "@mantine/core/styles.css";
+import "@mantine/notifications/styles.css";
+import AppRoutes from "./AppRoutes";
+
+const theme = createTheme({
+    /** Put your mantine theme override here */
+});
 
 function App() {
-    const [count, setCount] = useState(0);
-    const [test] = useState({ name: "ViteJS" });
-
-    const handleChangeName = () => {
-        setCount(count + 1);
-        test.name = "ReactJS";
-    };
-
     return (
-        <div>
-            {test.name}
-            <button type="button" onClick={handleChangeName}>
-                Click
-            </button>
-        </div>
+        <MantineProvider theme={theme}>
+            <Notifications />
+            <AppRoutes />
+        </MantineProvider>
     );
 }
 
