@@ -13,8 +13,8 @@ const Layout = () => {
                     leftSection={<IconGauge size="1rem" stroke={1.5} />}
                     childrenOffset={28}
                 >
-                    <NavLink href="/" label="Nga Thien" />
-                    <NavLink label="Con Meo meo" href="/about" />
+                    <NavLink component={Link} to="/" label="Nga Thien" />
+                    <NavLink component={Link} label="Con Meo meo" to="/about" />
                 </NavLink>
             </nav>
             <div className="col-span-9">
